@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Cyber Chief Tetris</title>
+    <title>Cyber Chief Tetris - Overdrive</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
 </head>
 <body>
     <div id="game-container"></div>
-    <div id="ui-layer">
-        <div id="score-container">
-            <div>SCORE: <span id="score">0</span></div>
-            <div>BEST: <span id="best">0</span></div>
+    <div id="ui-overlay">
+        <div class="score-box">
+            <div class="label">SCORE</div>
+            <div id="score" class="value">0</div>
+        </div>
+        <div class="score-box">
+            <div class="label">BEST</div>
+            <div id="best" class="value">0</div>
         </div>
     </div>
     <div id="controls">
-        <div class="control-group">
-            <button class="btn rotate" id="btn-rotate">ROT</button>
-        </div>
-        <div class="control-group dpad">
+        <button class="btn rotate" id="btn-rotate">ROT</button>
+        <div class="dpad">
             <button class="btn up" id="btn-up">↑</button>
             <button class="btn left" id="btn-left">←</button>
             <button class="btn down" id="btn-down">↓</button>
