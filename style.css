@@ -1,61 +1,72 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+}
+
 body {
     margin: 0;
-    background: #050505;
-    color: #fff;
+    padding: 0;
+    background: #000;
+    color: white;
     font-family: 'Courier New', Courier, monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     overflow: hidden;
     height: 100vh;
 }
 
 #game-container {
-    margin-top: 10px;
-    border: 2px solid #333;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+#ui-layer {
+    position: absolute;
+    top: env(safe-area-inset-top, 20px);
+    left: 20px;
+    pointer-events: none;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+#score-container { font-size: 18px; line-height: 1.5; }
 
 #controls {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
     position: absolute;
-    bottom: 30px;
+    bottom: env(safe-area-inset-bottom, 20px);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 20px;
 }
 
-.ctrl-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #444;
-    color: #fff;
-    border-radius: 10px;
+.btn {
+    background: rgba(0, 243, 255, 0.1);
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    border-radius: 12px;
     font-weight: bold;
-    user-select: none;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
     touch-action: none;
 }
 
-.ctrl-btn:active {
-    background: rgba(0, 255, 255, 0.3);
-    border-color: #0ff;
+.btn:active {
+    background: var(--neon-blue);
+    color: #000;
 }
 
-#btn-rotate {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
+.rotate { width: 80px; height: 80px; font-size: 20px; }
 
 .dpad {
     display: grid;
     grid-template-areas: 
         ". up ."
         "left down right";
-    gap: 5px;
+    gap: 10px;
 }
 
-.grid-up { grid-area: up; width: 60px; height: 60px; }
-.grid-left { grid-area: left; width: 60px; height: 60px; }
-.grid-down { grid-area: down; width: 60px; height: 60px; }
-.grid-right { grid-area: right; width: 60px; height: 60px; }
+.up { grid-area: up; width: 60px; height: 60px; }
+.left { grid-area: left; width: 60px; height: 60px; }
+.down { grid-area: down; width: 60px; height: 60px; }
+.right { grid-area: right; width: 60px; height: 60px; }
