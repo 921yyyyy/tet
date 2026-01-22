@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background: #050505;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    height: 100vh;
+}
+
+#game-container {
+    margin-top: 10px;
+    border: 2px solid #333;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+#controls {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: absolute;
+    bottom: 30px;
+}
+
+.ctrl-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    user-select: none;
+    touch-action: none;
+}
+
+.ctrl-btn:active {
+    background: rgba(0, 255, 255, 0.3);
+    border-color: #0ff;
+}
+
+#btn-rotate {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.dpad {
+    display: grid;
+    grid-template-areas: 
+        ". up ."
+        "left down right";
+    gap: 5px;
+}
+
+.grid-up { grid-area: up; width: 60px; height: 60px; }
+.grid-left { grid-area: left; width: 60px; height: 60px; }
+.grid-down { grid-area: down; width: 60px; height: 60px; }
+.grid-right { grid-area: right; width: 60px; height: 60px; }
