@@ -2,24 +2,28 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Chief Tetris - Overdrive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Cyber Chief Tetris</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/phaser@3.60.0/dist/phaser.min.js"></script>
 </head>
 <body>
     <div id="game-container"></div>
-    <div id="controls">
-        <div class="left-group">
-            <button class="ctrl-btn" id="btn-rotate">ROTATE</button>
+    <div id="ui-layer">
+        <div id="score-container">
+            <div>SCORE: <span id="score">0</span></div>
+            <div>BEST: <span id="best">0</span></div>
         </div>
-        <div class="right-group">
-            <div class="dpad">
-                <button class="ctrl-btn grid-up" id="btn-up">↑</button>
-                <button class="ctrl-btn grid-left" id="btn-left">←</button>
-                <button class="ctrl-btn grid-down" id="btn-down">↓</button>
-                <button class="ctrl-btn grid-right" id="btn-right">→</button>
-            </div>
+    </div>
+    <div id="controls">
+        <div class="control-group">
+            <button class="btn rotate" id="btn-rotate">ROT</button>
+        </div>
+        <div class="control-group dpad">
+            <button class="btn up" id="btn-up">↑</button>
+            <button class="btn left" id="btn-left">←</button>
+            <button class="btn down" id="btn-down">↓</button>
+            <button class="btn right" id="btn-right">→</button>
         </div>
     </div>
     <script src="game.js"></script>
